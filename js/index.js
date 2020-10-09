@@ -1,6 +1,6 @@
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
+import { quizQuestions } from "./quizQuestions";
+import { DOMSelectors } from "./Dom";
+
 function buildQuiz(){}
 
 function showResults(){}
