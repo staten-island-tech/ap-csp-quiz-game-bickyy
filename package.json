@@ -1,6 +1,7 @@
 {
   "name": "ap-csp-quiz-game-bickyy",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +16,7 @@
     "url": "https://github.com/staten-island-tech/ap-csp-quiz-game-bickyy/issues"
   },
   "homepage": "https://github.com/staten-island-tech/ap-csp-quiz-game-bickyy#readme",
-  "keywords": [],
-  "description": ""
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
