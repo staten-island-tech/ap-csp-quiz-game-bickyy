@@ -1,0 +1,46 @@
+html,
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  background: #beebe9;
+}
+
+.start-btn {
+  width: 20rem;
+  height: 10rem;
+  font-size: 3rem;
+}
+
+question-list {
+  text-align: center;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+h3:hover {
+  background-color: #f6eec7;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.item-image {
+  height: 40rem;
+  width: 80rem;
+  margin: auto;
+}
+/*# sourceMappingURL=style.css.map */
