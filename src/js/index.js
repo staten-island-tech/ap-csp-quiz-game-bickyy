@@ -29,24 +29,7 @@ const init = function () {
         `
     )
   );
-  const showResults = function () {
-    var score = 0;
-    quizQuestion.forEach((question) => {
-      if (document.querySelector(`input[name="${question.number}"]:checked`)) {
-        var radioValue = document.querySelector(
-          `input[name="${question.number}"]:checked`
-        ).value;
-        if (radioValue == `${question.correct}`) {
-          score++;
-          document.getElementById(`${question.number}`).style.color = "green";
-        } else if (radioValue != "Shawarma") {
-          document.getElementById(`${question.number}`).style.color = "red";
-        }
-        DOMSelectors.resultContainer.innerHTML = `<h1>Your Score is ${score}/${quizQuestion.length}</h1>`;
-      }
-    });
-  };
-  DOMSelectors.submitButton.addEventListener("click", showResults);
+
 };
 
 init();

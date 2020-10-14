@@ -128,7 +128,6 @@ var quizQuestion = [{
   img: "https://cdn.pixabay.com/photo/2019/04/04/15/52/hare-4103102_1280.jpg",
   number: "1",
   question: "Who invented the Chinese torture box?",
-  Answer: "A. David Blaine B. David Copperfield C. Harry Houdini",
   a: "David Blaine",
   b: "David Copperfield",
   c: "Harry Houdini",
@@ -231,27 +230,6 @@ var init = function init() {
   _quizQuestion.quizQuestion.forEach(function (item) {
     return _Dom.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "\n        <h4 class=\"item-image\">\n        <img\n            class=\"item-image\"\n            src=\"".concat(item.img, "\"\n            alt=\"\"\n        />\n        <h2 class= \"qan\">").concat(item.number, ". ").concat(item.question, "</h2>\n       \n        <h3 class= \"answer\">\n          <input type=\"radio\" id=\"").concat(item.a, "\"name=\"").concat(item.number, "\" value=\"").concat(item.a, "\">\n          ").concat(item.a, " \n        </h3>\n        <h3 class= \"answer\"> \n        <input type=\"radio\" id=\"").concat(item.b, "\"name=\"").concat(item.number, "\" value=\"").concat(item.b, "\">\n        ").concat(item.b, " \n        </h3>\n        <h3 class= \"answer\">\n        <input type=\"radio\" id=\"").concat(item.c, "\"name=\"").concat(item.number, "\" value=\"").concat(item.c, "\">\n        ").concat(item.c, " \n        </h3>\n        "));
   });
-
-  var showResults = function showResults() {
-    var score = 0;
-
-    _quizQuestion.quizQuestion.forEach(function (question) {
-      if (document.querySelector("input[name=\"".concat(question.number, "\"]:checked"))) {
-        var radioValue = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
-
-        if (radioValue == "".concat(question.correct)) {
-          score++;
-          document.getElementById("".concat(question.number)).style.color = "green";
-        } else if (radioValue != "Shawarma") {
-          document.getElementById("".concat(question.number)).style.color = "red";
-        }
-
-        _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>Your Score is ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
-      }
-    });
-  };
-
-  _Dom.DOMSelectors.submitButton.addEventListener("click", showResults);
 };
 
 init();
@@ -283,11 +261,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55275" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49501" + '/');
->>>>>>> 9e96494719f8fddd9fe40e52f39fa22d6f164f5f
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56114" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
