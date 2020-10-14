@@ -3,7 +3,6 @@ const quizQuestion = [
     img: "https://cdn.pixabay.com/photo/2019/04/04/15/52/hare-4103102_1280.jpg",
     number: "1",
     question: "Who invented the Chinese torture box?",
-    Answer: "A. David Blaine B. David Copperfield C. Harry Houdini",
     a: "David Blaine",
     b: "David Copperfield",
     c: "Harry Houdini",
