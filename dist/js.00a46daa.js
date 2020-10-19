@@ -239,9 +239,9 @@ var init = function init() {
 
       if (answerSelected === "".concat(question.correctAnswer)) {
         score++;
-        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(10,200,160)";
+        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(165,252,197)";
       } else {
-        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(200,100,130)";
+        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(255,134,134)";
       }
 
       _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>Your Score is ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
@@ -280,7 +280,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49991" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50908" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

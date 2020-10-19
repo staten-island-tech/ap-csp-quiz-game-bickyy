@@ -40,10 +40,10 @@ const init = function () {
       if (answerSelected === `${question.correctAnswer}`) {
         score++;
         document.getElementById(`${question.number}`).style.backgroundColor =
-          "rgb(10,200,160)";
+          "rgb(165,252,197)";
       } else {
         document.getElementById(`${question.number}`).style.backgroundColor =
-          "rgb(200,100,130)";
+          "rgb(255,134,134)";
       }
       DOMSelectors.resultContainer.innerHTML = `<h1>Your Score is ${score}/${quizQuestion.length}</h1>`;
     });
