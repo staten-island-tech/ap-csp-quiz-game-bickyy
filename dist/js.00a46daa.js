@@ -230,6 +230,25 @@ var init = function init() {
   _quizQuestion.quizQuestion.forEach(function (item) {
     return _Dom.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "\n        <h4 class=\"item-image\">\n        <img\n            class=\"item-image\"\n            src=\"".concat(item.img, "\"\n            alt=\"\"\n        />\n        <h2 class= \"qan\">").concat(item.number, ". ").concat(item.question, "</h2>\n       \n        <h3 class= \"answer\">\n          <input type=\"radio\" id=\"").concat(item.a, "\"name=\"").concat(item.number, "\" value=\"").concat(item.a, "\">\n          ").concat(item.a, " \n        </h3>\n        <h3 class= \"answer\"> \n        <input type=\"radio\" id=\"").concat(item.b, "\"name=\"").concat(item.number, "\" value=\"").concat(item.b, "\">\n        ").concat(item.b, " \n        </h3>\n        <h3 class= \"answer\">\n        <input type=\"radio\" id=\"").concat(item.c, "\"name=\"").concat(item.number, "\" value=\"").concat(item.c, "\">\n        ").concat(item.c, " \n        </h3>\n        "));
   });
+
+  var quizResults = function quizResults() {
+    var score = 0;
+
+    _quizQuestion.quizQuestion.forEach(function (question) {
+      var answerSelected = document.querySelector("input[name=\"".concat(question.number, "]:checked")).value;
+
+      if (answerSelected === "".concat(question.correctAnswer)) {
+        score++;
+        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(10,200,160)";
+      } else {
+        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(200,100,130)";
+      }
+
+      _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>Your Score is ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
+    });
+  };
+
+  _Dom.DOMSelectors.submitButton.addEventListener("click", quizResults);
 };
 
 init();
@@ -261,7 +280,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56114" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49991" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
