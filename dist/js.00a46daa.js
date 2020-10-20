@@ -237,16 +237,18 @@ var init = function init() {
     var score = 0;
 
     _quizQuestion.quizQuestion.forEach(function (question) {
-      var answerSelected = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
+      if (document.querySelector('input[name ="${question.name}"]: checked')) {
+        var answerSelected = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
 
-      if (answerSelected === "".concat(question.correctAnswer)) {
-        score++;
-        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(165,252,197)";
-      } else {
-        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(255,134,134)";
+        if (answerSelected == "".concat(question.correctAnswer)) {
+          score++;
+          document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(165,252,197)";
+        } else {
+          document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(255,134,134)";
+        }
+
+        _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>Your Score is ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
       }
-
-      _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>Your Score is ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
     });
   };
 
@@ -282,11 +284,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58029" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53710" + '/');
->>>>>>> 814bd3f3e448bcce34a45277cfbd44d6f90687c1
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62658" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
