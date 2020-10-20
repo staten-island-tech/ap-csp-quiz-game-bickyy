@@ -262,11 +262,11 @@ var init = function init() {
       if (answerSelected === "".concat(ques.correctAnswer)) {
         score++;
         document.getElementById("".concat(ques.number)).style.color = "green";
-      } else {
+      } else if (answerSelected !== "".concat(ques.correctAnswer)) {
         document.getElementById("".concat(ques.number)).style.color = "red";
       }
 
-      _Dom.DOMSelectors.resultContainer.innerHTML = "<h1 class= \"result\" >You got a ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
+      _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>You got a ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, ".</h1>");
     });
   };
 
@@ -302,7 +302,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65169" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51454" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
