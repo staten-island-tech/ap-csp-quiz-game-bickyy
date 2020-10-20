@@ -16,43 +16,38 @@ const init = function () {
         <h2 class= "qan">${item.number}. ${item.question}</h2>
        
         <h3 class= "answer">
-          <input type="radio" id="${item.a}"name="${item.number}" value="${item.a}">
-          ${item.a} 
+          <input type="radio" name="${item.number}"  value="${item.choices.a}">
+          <label for="${item.choices}">${item.choices.a}</label>
         </h3>
         <h3 class= "answer"> 
-        <input type="radio" id="${item.b}"name="${item.number}" value="${item.b}">
-        ${item.b} 
+        <input type="radio" name="${item.number}"  value="${item.choices.b}">
+        <label for="${item.choices}">${item.choices.b}</label>
         </h3>
         <h3 class= "answer">
-        <input type="radio" id="${item.c}"name="${item.number}" value="${item.c}">
-        ${item.c} 
+        <input type="radio" name="${item.number}"  value="${item.choices.c}">
+        <label for="${item.choices}">${item.choices.c}</label>
         </h3>
         `
     )
   );
-
   const quizResults = function () {
     var score = 0;
 
-    quizQuestion.forEach((question) => {
-      if(document.querySelector('input[name ="${question.name}"]: checked')){
-       var answerSelected = document.querySelector(
-        `input[name="${question.number}"]:checked`
+    quizQuestion.forEach((ques) => {
+      const answerSelected = document.querySelector(
+        `input[name="${ques.number}"]:checked`
       ).value;
-      if (answerSelected == `${question.correctAnswer}`) {
+
+      if (answerSelected === `${ques.correctAnswer}`) {
         score++;
-        document.getElementById(`${question.number}`).style.backgroundColor =
-          "rgb(165,252,197)";
+        document.getElementById(`${ques.number}`).style.color = "green";
       } else {
-        document.getElementById(`${question.number}`).style.backgroundColor =
-          "rgb(255,134,134)";
+        document.getElementById(`${ques.number}`).style.color = "red";
       }
-      DOMSelectors.resultContainer.innerHTML = `<h1>Your Score is ${score}/${quizQuestion.length}</h1>`;
-    }
+      DOMSelectors.resultContainer.innerHTML = `<h1>You got a ${score}/${quizQuestion.length}</h1>`;
     });
   };
   DOMSelectors.submitButton.addEventListener("click", quizResults);
 };
-
 
 init();
