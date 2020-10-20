@@ -1,5 +1,6 @@
 import { quizQuestion } from "./quizQuestion";
 import { DOMSelectors } from "./Dom";
+console.log("connected");
 
 const init = function () {
   quizQuestion.forEach((item) =>
@@ -35,7 +36,7 @@ const init = function () {
 
     quizQuestion.forEach((question) => {
       const answerSelected = document.querySelector(
-        `input[name="${question.number}]:checked`
+        `input[name="${question.number}"]:checked`
       ).value;
       if (answerSelected === `${question.correctAnswer}`) {
         score++;
