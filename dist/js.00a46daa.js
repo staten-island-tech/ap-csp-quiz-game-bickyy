@@ -237,10 +237,10 @@ var init = function init() {
     var score = 0;
 
     _quizQuestion.quizQuestion.forEach(function (question) {
-      if (document.querySelector('input[name ="${question.name}"]: checked')) {
+      if (document.querySelector('input[name ="${question.number}"]: checked')) {
         var answerSelected = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
 
-        if (answerSelected == "".concat(question.correctAnswer)) {
+        if (answerSelected === "".concat(question.correctAnswer)) {
           score++;
           document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(165,252,197)";
         } else {
