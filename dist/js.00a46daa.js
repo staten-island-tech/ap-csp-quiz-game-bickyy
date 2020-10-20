@@ -126,84 +126,104 @@ Object.defineProperty(exports, "__esModule", {
 exports.quizQuestion = void 0;
 var quizQuestion = [{
   img: "https://cdn.pixabay.com/photo/2019/04/04/15/52/hare-4103102_1280.jpg",
-  number: "1",
   question: "Who invented the Chinese torture box?",
-  a: "David Blaine",
-  b: "David Copperfield",
-  c: "Harry Houdini",
-  correctAnswer: "c"
+  number: "1",
+  choices: {
+    a: "David Blaine",
+    b: "David Copperfield",
+    c: "Harry Houdini"
+  },
+  correctAnswer: "Harry Houdini"
 }, {
   img: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   question: "What is Mario Bros daytime job?",
   number: "2",
-  a: "Race Car Driver",
-  b: "Teacher",
-  c: "Plumber",
-  correctAnswer: "c"
+  choices: {
+    a: "Race Car Driver",
+    b: "Teacher",
+    c: "Plumber"
+  },
+  correctAnswer: "Plumber"
 }, {
   img: "https://cdn.pixabay.com/photo/2018/11/25/19/13/tree-3838122_1280.jpg",
   question: "Who is Tim Burton?",
   number: "3",
-  a: "Director",
-  b: "Singer",
-  c: "Actor",
-  correctAnswer: "a"
+  choices: {
+    a: "Director",
+    b: "Singer",
+    c: "Actor"
+  },
+  correctAnswer: "Director"
 }, {
   img: "https://images.unsplash.com/photo-1509909756405-be0199881695?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   question: "Which is the name of the bird in the movie UP?",
   number: "4",
-  a: "Karl",
-  b: "Kevin",
-  c: "Sam",
-  correctAnswer: "b"
+  choices: {
+    a: "Karl",
+    b: "Kevin",
+    c: "Sam"
+  },
+  correctAnswer: "Kevin"
 }, {
   img: "https://cdn.pixabay.com/photo/2017/08/27/18/10/shadow-2687048_1280.jpg",
   question: "How old was Michael Jackson when he died?",
   number: "5",
-  a: "47",
-  b: "55",
-  c: "50",
-  correctAnswer: "c"
+  choices: {
+    a: "47",
+    b: "55",
+    c: "50"
+  },
+  correctAnswer: "50"
 }, {
   img: "https://cdn.pixabay.com/photo/2017/11/28/04/11/bear-2982809_1280.jpg",
   question: "Where does Pooh live?",
   number: "6",
-  a: "A Tree",
-  b: "A Mushroom",
-  c: "A House",
-  correctAnswer: "a"
+  choices: {
+    a: "A Tree",
+    b: "A Mushroom",
+    c: "A House"
+  },
+  correctAnswer: "A Tree"
 }, {
   img: "https://images.unsplash.com/photo-1558679928-be7e02981a07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   question: "How old is Rapunzel in the movie ‘Tangled’?",
   number: "7",
-  a: "18",
-  b: "15",
-  c: "20",
-  correctAnswer: "a"
+  choices: {
+    a: "18",
+    b: "15",
+    c: "20"
+  },
+  correctAnswer: "18"
 }, {
   img: "https://images.unsplash.com/photo-1561628898-71993b042329?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
   question: "What year did ‘Thriller’ come out?",
   number: "8",
-  a: "1980",
-  b: "1982",
-  c: "1988",
-  correctAnswer: "b"
+  choices: {
+    a: "1980",
+    b: "1982",
+    c: "1988"
+  },
+  correctAnswer: "1982"
 }, {
   img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
   question: "Which game won the VGX award in 2013?",
   number: "9",
-  a: "Grand Theft Auto V",
-  b: "PubG",
-  c: "League Of Legends",
-  correctAnswer: "a"
+  choices: {
+    a: "Grand Theft Auto V",
+    b: "PubG",
+    c: "League Of Legends"
+  },
+  correctAnswer: "Grand Theft Auto V"
 }, {
   img: "https://images.unsplash.com/photo-1503792501406-2c40da09e1e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80",
   question: "Who played the character of Edward Scissorhands?",
   number: "10",
-  a: "Johnny Depp",
-  b: "Paul Newman",
-  c: "Humphrey Bogart",
-  correctAnswer: "a"
+  choices: {
+    a: "Johnny Depp",
+    b: "Paul Newman",
+    c: "Humphrey Bogart",
+    correctAnswer: "Johnny Depp"
+  }
 }];
 exports.quizQuestion = quizQuestion;
 },{}],"js/Dom.js":[function(require,module,exports) {
@@ -230,12 +250,13 @@ console.log("connected");
 
 var init = function init() {
   _quizQuestion.quizQuestion.forEach(function (item) {
-    return _Dom.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "\n        <h4 class=\"item-image\">\n        <img\n            class=\"item-image\"\n            src=\"".concat(item.img, "\"\n            alt=\"\"\n        />\n        <h2 class= \"qan\">").concat(item.number, ". ").concat(item.question, "</h2>\n       \n        <h3 class= \"answer\">\n          <input type=\"radio\" id=\"").concat(item.a, "\"name=\"").concat(item.number, "\" value=\"").concat(item.a, "\">\n          ").concat(item.a, " \n        </h3>\n        <h3 class= \"answer\"> \n        <input type=\"radio\" id=\"").concat(item.b, "\"name=\"").concat(item.number, "\" value=\"").concat(item.b, "\">\n        ").concat(item.b, " \n        </h3>\n        <h3 class= \"answer\">\n        <input type=\"radio\" id=\"").concat(item.c, "\"name=\"").concat(item.number, "\" value=\"").concat(item.c, "\">\n        ").concat(item.c, " \n        </h3>\n        "));
+    return _Dom.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "\n        <h4 class=\"item-image\">\n        <img\n            class=\"item-image\"\n            src=\"".concat(item.img, "\"\n            alt=\"\"\n        />\n        <h2 class= \"qan\" id=\"").concat(item.number, "\">").concat(item.number, ". ").concat(item.question, "</h2>\n       \n        <h3 class= \"answer\">\n          <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.choices.a, "\">\n          <label for=\"").concat(item.choices, "\">").concat(item.choices.a, "</label>\n        </h3>\n        <h3 class= \"answer\"> \n        <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.choices.b, "\">\n        <label for=\"").concat(item.choices, "\">").concat(item.choices.b, "</label>\n        </h3>\n        <h3 class= \"answer\">\n        <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.choices.c, "\">\n        <label for=\"").concat(item.choices, "\">").concat(item.choices.c, "</label>\n        </h3>\n        "));
   });
 
   var quizResults = function quizResults() {
     var score = 0;
 
+<<<<<<< HEAD
     _quizQuestion.quizQuestion.forEach(function (question) {
       if (document.querySelector('input[name ="${question.number}"]: checked')) {
         var answerSelected = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
@@ -248,7 +269,19 @@ var init = function init() {
         }
 
         _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>Your Score is ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
+=======
+    _quizQuestion.quizQuestion.forEach(function (ques) {
+      var answerSelected = document.querySelector("input[name=\"".concat(ques.number, "\"]:checked")).value;
+
+      if (answerSelected === "".concat(ques.correctAnswer)) {
+        score++;
+        document.getElementById("".concat(ques.number)).style.color = "green";
+      } else {
+        document.getElementById("".concat(ques.number)).style.color = "red";
+>>>>>>> bb0779bdaaf0a87356531ae4b6b0705d7aa5e7ca
       }
+
+      _Dom.DOMSelectors.resultContainer.innerHTML = "<h1 class= \"result\" >You got a ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
     });
   };
 
@@ -284,7 +317,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62658" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65169" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
