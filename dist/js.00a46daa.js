@@ -133,7 +133,7 @@ var quizQuestion = [{
     b: "David Copperfield",
     c: "Harry Houdini"
   },
-  correctAnswer: "c"
+  correctAnswer: "Harry Houdini"
 }, {
   img: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   question: "What is Mario Bros daytime job?",
@@ -143,7 +143,7 @@ var quizQuestion = [{
     b: "Teacher",
     c: "Plumber"
   },
-  correctAnswer: "c"
+  correctAnswer: "Plumber"
 }, {
   img: "https://cdn.pixabay.com/photo/2018/11/25/19/13/tree-3838122_1280.jpg",
   question: "Who is Tim Burton?",
@@ -153,7 +153,7 @@ var quizQuestion = [{
     b: "Singer",
     c: "Actor"
   },
-  correctAnswer: "a"
+  correctAnswer: "Director"
 }, {
   img: "https://images.unsplash.com/photo-1509909756405-be0199881695?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   question: "Which is the name of the bird in the movie UP?",
@@ -163,7 +163,7 @@ var quizQuestion = [{
     b: "Kevin",
     c: "Sam"
   },
-  correctAnswer: "b"
+  correctAnswer: "Kevin"
 }, {
   img: "https://cdn.pixabay.com/photo/2017/08/27/18/10/shadow-2687048_1280.jpg",
   question: "How old was Michael Jackson when he died?",
@@ -173,7 +173,7 @@ var quizQuestion = [{
     b: "55",
     c: "50"
   },
-  correctAnswer: "c"
+  correctAnswer: "50"
 }, {
   img: "https://cdn.pixabay.com/photo/2017/11/28/04/11/bear-2982809_1280.jpg",
   question: "Where does Pooh live?",
@@ -183,7 +183,7 @@ var quizQuestion = [{
     b: "A Mushroom",
     c: "A House"
   },
-  correctAnswer: "a"
+  correctAnswer: "A Tree"
 }, {
   img: "https://images.unsplash.com/photo-1558679928-be7e02981a07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   question: "How old is Rapunzel in the movie ‘Tangled’?",
@@ -193,7 +193,7 @@ var quizQuestion = [{
     b: "15",
     c: "20"
   },
-  correctAnswer: "a"
+  correctAnswer: "18"
 }, {
   img: "https://images.unsplash.com/photo-1561628898-71993b042329?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
   question: "What year did ‘Thriller’ come out?",
@@ -203,7 +203,7 @@ var quizQuestion = [{
     b: "1982",
     c: "1988"
   },
-  correctAnswer: "b"
+  correctAnswer: "1982"
 }, {
   img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
   question: "Which game won the VGX award in 2013?",
@@ -213,7 +213,7 @@ var quizQuestion = [{
     b: "PubG",
     c: "League Of Legends"
   },
-  correctAnswer: "a"
+  correctAnswer: "Grand Theft Auto V"
 }, {
   img: "https://images.unsplash.com/photo-1503792501406-2c40da09e1e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80",
   question: "Who played the character of Edward Scissorhands?",
@@ -222,7 +222,7 @@ var quizQuestion = [{
     a: "Johnny Depp",
     b: "Paul Newman",
     c: "Humphrey Bogart",
-    correctAnswer: "a"
+    correctAnswer: "Johnny Depp"
   }
 }];
 exports.quizQuestion = quizQuestion;
@@ -250,7 +250,7 @@ console.log("connected");
 
 var init = function init() {
   _quizQuestion.quizQuestion.forEach(function (item) {
-    return _Dom.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "\n        <h4 class=\"item-image\">\n        <img\n            class=\"item-image\"\n            src=\"".concat(item.img, "\"\n            alt=\"\"\n        />\n        <h2 class= \"qan\">").concat(item.number, ". ").concat(item.question, "</h2>\n       \n        <h3 class= \"answer\">\n          <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.choices.a, "\">\n          <label for=\"").concat(item.choices, "\">").concat(item.choices.a, "</label>\n        </h3>\n        <h3 class= \"answer\"> \n        <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.choices.b, "\">\n        <label for=\"").concat(item.choices, "\">").concat(item.choices.b, "</label>\n        </h3>\n        <h3 class= \"answer\">\n        <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.choices.c, "\">\n        <label for=\"").concat(item.choices, "\">").concat(item.choices.c, "</label>\n        </h3>\n        "));
+    return _Dom.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "\n        <h4 class=\"item-image\">\n        <img\n            class=\"item-image\"\n            src=\"".concat(item.img, "\"\n            alt=\"\"\n        />\n        <h2 class= \"qan\" id=\"").concat(item.number, "\">").concat(item.number, ". ").concat(item.question, "</h2>\n       \n        <h3 class= \"answer\">\n          <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.choices.a, "\">\n          <label for=\"").concat(item.choices, "\">").concat(item.choices.a, "</label>\n        </h3>\n        <h3 class= \"answer\"> \n        <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.choices.b, "\">\n        <label for=\"").concat(item.choices, "\">").concat(item.choices.b, "</label>\n        </h3>\n        <h3 class= \"answer\">\n        <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.choices.c, "\">\n        <label for=\"").concat(item.choices, "\">").concat(item.choices.c, "</label>\n        </h3>\n        "));
   });
 
   var quizResults = function quizResults() {
@@ -266,7 +266,7 @@ var init = function init() {
         document.getElementById("".concat(ques.number)).style.color = "red";
       }
 
-      _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>You got a ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
+      _Dom.DOMSelectors.resultContainer.innerHTML = "<h1 class= \"result\" >You got a ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
     });
   };
 
@@ -302,7 +302,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52006" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65169" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
