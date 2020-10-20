@@ -256,6 +256,20 @@ var init = function init() {
   var quizResults = function quizResults() {
     var score = 0;
 
+<<<<<<< HEAD
+    _quizQuestion.quizQuestion.forEach(function (question) {
+      if (document.querySelector('input[name ="${question.number}"]: checked')) {
+        var answerSelected = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
+
+        if (answerSelected === "".concat(question.correctAnswer)) {
+          score++;
+          document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(165,252,197)";
+        } else {
+          document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(255,134,134)";
+        }
+
+        _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>Your Score is ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, "</h1>");
+=======
     _quizQuestion.quizQuestion.forEach(function (ques) {
       var answerSelected = document.querySelector("input[name=\"".concat(ques.number, "\"]:checked")).value;
 
@@ -264,6 +278,7 @@ var init = function init() {
         document.getElementById("".concat(ques.number)).style.color = "green";
       } else if (answerSelected !== "".concat(ques.correctAnswer)) {
         document.getElementById("".concat(ques.number)).style.color = "red";
+>>>>>>> bb0779bdaaf0a87356531ae4b6b0705d7aa5e7ca
       }
 
       _Dom.DOMSelectors.resultContainer.innerHTML = "<h1>You got a ".concat(score, "/").concat(_quizQuestion.quizQuestion.length, ".</h1>");
