@@ -1,5 +1,6 @@
 import { quizQuestion } from "./quizQuestion";
 import { DOMSelectors } from "./Dom";
+console.log("connected");
 
 const init = function () {
   quizQuestion.forEach((item) =>
@@ -30,6 +31,25 @@ const init = function () {
     )
   );
 
+  const quizResults = function () {
+    var score = 0;
+
+    quizQuestion.forEach((question) => {
+      const answerSelected = document.querySelector(
+        `input[name="${question.number}"]:checked`
+      ).value;
+      if (answerSelected === `${question.correctAnswer}`) {
+        score++;
+        document.getElementById(`${question.number}`).style.backgroundColor =
+          "rgb(165,252,197)";
+      } else {
+        document.getElementById(`${question.number}`).style.backgroundColor =
+          "rgb(255,134,134)";
+      }
+      DOMSelectors.resultContainer.innerHTML = `<h1>Your Score is ${score}/${quizQuestion.length}</h1>`;
+    });
+  };
+  DOMSelectors.submitButton.addEventListener("click", quizResults);
 };
 
 
