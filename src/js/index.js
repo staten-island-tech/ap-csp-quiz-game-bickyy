@@ -40,7 +40,7 @@ const init = function () {
       if (answerSelected === `${ques.correctAnswer}`) {
         score++;
         document.getElementById(`${ques.number}`).style.color = "green";
-      } else if (answerSelected !== `${ques.correctAnswer}`) {
+      } else {
         document.getElementById(`${ques.number}`).style.color = "red";
       }
       DOMSelectors.resultContainer.innerHTML = `<h1>You got a ${score}/${quizQuestion.length}.</h1>`;
