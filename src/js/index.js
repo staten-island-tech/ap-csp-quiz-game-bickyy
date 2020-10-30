@@ -6,7 +6,7 @@ const init = function () {
   quizQuestion.forEach((item) =>
     DOMSelectors.quizContainer.insertAdjacentHTML(
       "beforeend",
-      `
+      ` 
         <h4 class="item-image">
         <img
             class="item-image"
